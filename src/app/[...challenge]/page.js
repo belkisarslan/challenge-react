@@ -1,6 +1,6 @@
+import Hero from '@/components/hero'
 import React from 'react'
-import LayoutPage from './layoutPage'
-import Main from '@/components/main'
+
 
 
 
@@ -8,9 +8,12 @@ import Main from '@/components/main'
 export default function Challenge() {
   
   return (
-    <div className='flex flex-auto h-screen'>
-     <LayoutPage/>
-     <Main/>
+    <div>
+     <Hero>
+      <Hero.Subtitle>Challenges</Hero.Subtitle>
+      <Hero.Title>Challenge Blog</Hero.Title>
+      <Hero.Description>React.dev Challenge Solutions</Hero.Description>
+     </Hero>
     </div>
   )
 }
