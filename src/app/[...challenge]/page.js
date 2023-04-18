@@ -11,14 +11,14 @@ export default function Challenge() {
   return (
     <div>
      <Hero>
-      <Hero.Subtitle>Challenges</Hero.Subtitle>
+      <Hero.Subtitle>Blog</Hero.Subtitle>
       <Hero.Title>Challenge Blog</Hero.Title>
       <Hero.Description>React.dev Challenge Solutions</Hero.Description>
      </Hero>
 
-     <h2 className='px-8 text-gray-900 text-2xl font-semibold leading-8'>Solutations</h2>
+     <h2 className='p-3 pl-8 text-gray-500 text-2xl font-semibold leading-8'>Solutations</h2>
 
-     <div className='px-8 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8 mt-4'>
+     <div className='bg-gradient-to-r from-gray-800 p-8 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8 mt-4'>
       <ArticleItem path="/">
         <ArticleItem.Image source={{
           src: "https://picsum.photos/id/2/300/200",

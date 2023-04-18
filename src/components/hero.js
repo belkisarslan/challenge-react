@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Hero({children}) {
   return (
-    <section className='py-24 px-8 text-center shadow-lg border-b border-gray-500'>{children}</section>
+    <section className='py-24 px-8 text-center shadow-lg bg-gradient-to-r from-gray-800'>{children}</section>
   )
 }
 
@@ -11,7 +11,7 @@ Hero.Subtitle = function HeroSubtitle({ children }){
 }
 
 Hero.Title = function HeroTitle({ children }){
-    return <h1 className='text-5xl text-gray-500 tracking-tight mt-3 font-semibold'>{children}</h1>
+    return <h1 className='text-5xl text-gray-300 tracking-tight mt-3 font-semibold'>{children}</h1>
 }
 
 Hero.Description = function HeroDescription({ children }){
