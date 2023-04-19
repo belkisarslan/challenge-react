@@ -105,5 +105,14 @@ export default function Gallery() {
 }
 
 ```
+<h3>Challenge 4 of 4: Your own component</h3>
+<h3>Solutation 4 of 4: Your own component</h3>
 
+💫 ***Son olarak sıfırdan bir component oluşturmamız istenmektedir. Component ismini büyük yapmayı, Export etmeyi ve return döndürmeyi unutmayın :)*** 
+
+```
+export default function Blog(){
+  return <h1>Good job!</h1>
+}
+```
 
