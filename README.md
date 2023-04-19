@@ -54,4 +54,56 @@ export default function Profile() {
 }
 ```
 
+<h3>Challenge 3 of 4: Spot the mistake</h3>
+
+```
+function profile() {
+  return (
+    <img
+      src="https://i.imgur.com/QIrZWGIs.jpg"
+      alt="Alan L. Hart"
+    />
+  );
+}
+
+export default function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <profile />
+      <profile />
+      <profile />
+    </section>
+  );
+}
+
+```
+
+<h3>Solutation 3 of 4: Spot the mistake</h3>
+
+💫 ***Component isimleri büyük harfle başlamalıdır.*** 
+
+```
+function Profile() {
+  return (
+    <img
+      src="https://i.imgur.com/QIrZWGIs.jpg"
+      alt="Alan L. Hart"
+    />
+  );
+}
+
+export default function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
+  );
+}
+
+```
+
 
