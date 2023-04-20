@@ -116,3 +116,136 @@ export default function Blog(){
 }
 ```
 
+**<h2>Passing Props to a Component</h2>**
+
+<h3>Challenge 1 of 3: Extract a component </h3>
+
+```
+import { getImageUrl } from './utils.js';
+
+export default function Gallery() {
+  return (
+    <div>
+      <h1>Notable Scientists</h1>
+      <section className="profile">
+        <h2>Maria Skłodowska-Curie</h2>
+        <img
+          className="avatar"
+          src={getImageUrl('szV5sdG')}
+          alt="Maria Skłodowska-Curie"
+          width={70}
+          height={70}
+        />
+        <ul>
+          <li>
+            <b>Profession: </b> 
+            physicist and chemist
+          </li>
+          <li>
+            <b>Awards: 4 </b> 
+            (Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal, Matteucci Medal)
+          </li>
+          <li>
+            <b>Discovered: </b>
+            polonium (element)
+          </li>
+        </ul>
+      </section>
+      <section className="profile">
+        <h2>Katsuko Saruhashi</h2>
+        <img
+          className="avatar"
+          src={getImageUrl('YfeOqp2')}
+          alt="Katsuko Saruhashi"
+          width={70}
+          height={70}
+        />
+        <ul>
+          <li>
+            <b>Profession: </b> 
+            geochemist
+          </li>
+          <li>
+            <b>Awards: 2 </b> 
+            (Miyake Prize for geochemistry, Tanaka Prize)
+          </li>
+          <li>
+            <b>Discovered: </b>
+            a method for measuring carbon dioxide in seawater
+          </li>
+        </ul>
+      </section>
+    </div>
+  );
+}
+
+```
+
+<h3>Solutation 1 of 3: Extract a component </h3>
+
+💫 ***Sık tekrarlanan elementlerin prop geçilerek kodların sadeleştirilmesi istenmektedir. İki kişi için hazırlanan kart bilgilerini teke düşürelim ve ardında oluşturduğumuz profil componentlerine kişi özelliklerini prop olarak gönderelim.*** 
+
+```
+import { getImageUrl } from './utils.js';
+
+function Profile({ person, imageSize = 70 }) {
+  const imageSrc = getImageUrl(person)
+
+  return (
+    <section className="profile">
+      <h2>{person.name}</h2>
+      <img
+        className="avatar"
+        src={imageSrc}
+        alt={person.name}
+        width={imageSize}
+        height={imageSize}
+      />
+      <ul>
+        <li>
+          <b>Profession:</b> {person.profession}
+        </li>
+        <li>
+          <b>Awards: {person.awards.length} </b>
+          ({person.awards.join(', ')})
+        </li>
+        <li>
+          <b>Discovered: </b>
+          {person.discovery}
+        </li>
+      </ul>
+    </section>
+  )
+}
+
+export default function Gallery() {
+  return (
+    <div>
+      <h1>Notable Scientists</h1>
+      <Profile person={{
+        imageId: 'szV5sdG',
+        name: 'Maria Skłodowska-Curie',
+        profession: 'physicist and chemist',
+        discovery: 'polonium (chemical element)',
+        awards: [
+          'Nobel Prize in Physics',
+          'Nobel Prize in Chemistry',
+          'Davy Medal',
+          'Matteucci Medal'
+        ],
+      }} />
+      <Profile person={{
+        imageId: 'YfeOqp2',
+        name: 'Katsuko Saruhashi',
+        profession: 'geochemist',
+        discovery: 'a method for measuring carbon dioxide in seawater',
+        awards: [
+          'Miyake Prize for geochemistry',
+          'Tanaka Prize'
+        ],
+      }} />
+    </div>
+  );
+}
+```
+
