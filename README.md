@@ -181,7 +181,7 @@ export default function Gallery() {
 
 ```
 
-<h3>Solutation 1 of 3: Extract a component </h3>
+<h3>Solutation 1 of 3: Extract a component</h3>
 
 💫 ***Sık tekrarlanan elementlerin prop geçilerek kodların sadeleştirilmesi istenmektedir. İki kişi için hazırlanan kart bilgilerini teke düşürelim ve ardında oluşturduğumuz profil componentlerine kişi özelliklerini prop olarak gönderelim.*** 
 
@@ -249,3 +249,79 @@ export default function Gallery() {
 }
 ```
 
+<h3>Challenge 2 of 3: Adjust the image size based on a prop </h3>
+
+```
+import { getImageUrl } from './utils.js';
+
+function Avatar({ person, size }) {
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(person, 'b')}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
+}
+
+export default function Profile() {
+  return (
+    <Avatar
+      size={40}
+      person={{ 
+        name: 'Gregorio Y. Zara', 
+        imageId: '7vQD0fP'
+      }}
+    />
+  );
+}
+
+```
+<h3>Solutation 2 of 3: Adjust the image size based on a prop</h3>
+
+
+💫 ***Kullandığımız resimlerin başka bir sekmede verilen boyutlara göre açılması istenmektedir. Burada amaç tanımladığımız propların component içinde verileri değiştirerek tekrar tekrar ve farklı boyutlarda kullanabildiğimizi görmektir. Çözümde atlanmaması gereken küçük bir ayrıntı ise kapsayıcı fragment kullanımıdır. Eklenen çoklu compenentler için kapsayıcı <> </> kullanılmadığında hata vermektedir.***
+
+```
+import { getImageUrl } from './utils.js';
+
+function Avatar({ person, size }) {
+  let thumbnailSize = 's';
+  if (size > 90) {
+    thumbnailSize = 'b';
+  }
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(person, thumbnailSize)}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
+}
+
+export default function Profile() {
+  return (
+    <>
+      <Avatar
+        size={40}
+        person={{ 
+          name: 'Gregorio Y. Zara', 
+          imageId: '7vQD0fP'
+        }}
+      />
+      <Avatar
+        size={120}
+        person={{ 
+          name: 'Gregorio Y. Zara', 
+          imageId: '7vQD0fP'
+        }}
+      />
+    </>
+  );
+}
+
+```
