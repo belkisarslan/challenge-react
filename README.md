@@ -392,3 +392,78 @@ export default function Profile() {
 }
 
 ```
+
+**<h2>Conditional Rendering</h2>**
+
+<h3>Challenge 1 of 3: Show an icon for incomplete items</h3>
+
+```
+function Item({ name, isPacked }) {
+  return (
+    <li className="item">
+      {name} {isPacked && '✔'}
+    </li>
+  );
+}
+
+export default function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item 
+          isPacked={true} 
+          name="Space suit" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Helmet with a golden leaf" 
+        />
+        <Item 
+          isPacked={false} 
+          name="Photo of Tam" 
+        />
+      </ul>
+    </section>
+  );
+}
+
+```
+
+<h3>Solutation 1 of 3: Show an icon for incomplete items</h3>
+
+💫 ***Koşul operatörleri kullanarak, koşul sağlanıyorsa '✔' sağlanmıyorsa '❌' işaretlerini kullanmamız istenmektedir.***
+
+```
+function Item({ name, isPacked }) {
+  return (
+    <li className="item">
+      {name} {isPacked ? '✔' : '❌'}
+    </li>
+  );
+}
+
+export default function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item 
+          isPacked={true} 
+          name="Space suit" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Helmet with a golden leaf" 
+        />
+        <Item 
+          isPacked={false} 
+          name="Photo of Tam" 
+        />
+      </ul>
+    </section>
+  );
+}
+
+```
+
