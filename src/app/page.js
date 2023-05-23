@@ -10,7 +10,10 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-         <Link href="/challenge">Challenge 😏</Link>
+         <Link href="/blog">Blog 😏</Link>
+        </p>
+        <p>
+         <Link href="/exercise">Challenge Exercise 😎</Link>
         </p>
         <div>
           <a
