@@ -12,7 +12,7 @@ export default function Exercise() {
      </Hero>
 
      <h2 className='p-3 pl-8 text-center text-gray-500 text-2xl font-semibold leading-8'>Exercises</h2>
-     <div>
+     <div className='flex flex-auto'>
       <State/>
      </div>
     </div>
