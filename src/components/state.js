@@ -12,7 +12,7 @@ export const State = () => {
   }
   
   return (
-    <div className=' w-2/4 border-r p-3 bg-gradient-to-r from-gray-800'>
+    <div className=' w-2/4 border-r border-gray-500 p-3 bg-gradient-to-r from-gray-800'>
     <div className='text-center text-gray-400 text-xl leading-8 mt-2 mb-2'>State ile yapılan 'To Do List' örneği</div>
     <form className=' text-center' onSubmit={submitHandle}>
         <input className=' rounded bg-zinc-900 text-gray-400 border-solid border-2 border-gray-500 m-1 p-1 text-center' type='text' value={todo} onChange={(e) => setTodo(e.target.value)}/>

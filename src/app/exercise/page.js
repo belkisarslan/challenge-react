@@ -1,4 +1,5 @@
 import Hero from '@/components/hero'
+import Reducer from '@/components/reducer'
 import { State } from '@/components/state'
 import React from 'react'
 
@@ -12,8 +13,10 @@ export default function Exercise() {
      </Hero>
 
      <h2 className='p-3 pl-8 text-center text-gray-500 text-2xl font-semibold leading-8'>Exercises</h2>
+     <h3 className='p-3 pl-8 text-center text-gray-500 text-xl font-semibold leading-8'>useState ve useReducer Kullanımı </h3>
      <div className='flex flex-auto'>
       <State/>
+      <Reducer/>
      </div>
     </div>
   )
