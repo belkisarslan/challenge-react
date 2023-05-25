@@ -4,8 +4,8 @@ Merhabalar👋,
 
 Yeni react dokümanındaki challengeları çözmeye başladığım bir repo oluşturdum.
 
-**<h2>Your First Component</h2>**
-<h3>Challenge 1 of 4: Export the component</h3>
+**<h2 style="color:OrangeRed">Your First Component</h2>**
+<h3 style="color:DarkOrange">Challenge 1 of 4: Export the component</h3>
 
 ```
 function Profile() {
@@ -18,7 +18,7 @@ function Profile() {
 }
 
 ```
-<h3>Solutation 1 of 4: Export the component</h3>
+<h3 style="color:Green">Solutation 1 of 4: Export the component</h3>
 
 ```
 export default function Profile() {
@@ -31,7 +31,7 @@ export default function Profile() {
 }
 
 ```
-<h3>Challenge 2 of 4: Fix the return statement </h3>
+<h3 style="color:DarkOrange">Challenge 2 of 4: Fix the return statement </h3>
 
 ```
 export default function Profile() {
@@ -40,7 +40,7 @@ export default function Profile() {
 }
 ```
 
-<h3>Solution 2 of 4: Fix the return statement </h3>
+<h3 style="color:Green">Solution 2 of 4: Fix the return statement </h3>
  
 💫 ***img kapanış tagı sonrası konan noktalı virgül silinmelidir.*** 
 
@@ -54,7 +54,7 @@ export default function Profile() {
 }
 ```
 
-<h3>Challenge 3 of 4: Spot the mistake</h3>
+<h3 style="color:DarkOrange">Challenge 3 of 4: Spot the mistake</h3>
 
 ```
 function profile() {
@@ -79,7 +79,7 @@ export default function Gallery() {
 
 ```
 
-<h3>Solution 3 of 4: Spot the mistake</h3>
+<h3 style="color:Green">Solution 3 of 4: Spot the mistake</h3>
 
 💫 ***Component isimleri büyük harfle başlamalıdır.*** 
 
@@ -105,8 +105,8 @@ export default function Gallery() {
 }
 
 ```
-<h3>Challenge 4 of 4: Your own component</h3>
-<h3>Solution 4 of 4: Your own component</h3>
+<h3 style="color:DarkOrange">Challenge 4 of 4: Your own component</h3>
+<h3 style="color:Green">Solution 4 of 4: Your own component</h3>
 
 💫 ***Son olarak sıfırdan bir component oluşturmamız istenmektedir. Component ismini büyük yapmayı, Export etmeyi ve return döndürmeyi unutmayın :)*** 
 
@@ -116,9 +116,9 @@ export default function Blog(){
 }
 ```
 
-**<h2>Passing Props to a Component</h2>**
+**<h2 style="color:OrangeRed">Passing Props to a Component</h2>**
 
-<h3>Challenge 1 of 3: Extract a component </h3>
+<h3 style="color:DarkOrange">Challenge 1 of 3: Extract a component </h3>
 
 ```
 import { getImageUrl } from './utils.js';
@@ -181,7 +181,7 @@ export default function Gallery() {
 
 ```
 
-<h3>Solution 1 of 3: Extract a component</h3>
+<h3 style="color:Green">Solution 1 of 3: Extract a component</h3>
 
 💫 ***Sık tekrarlanan elementlerin prop geçilerek kodların sadeleştirilmesi istenmektedir. İki kişi için hazırlanan kart bilgilerini teke düşürelim ve ardında oluşturduğumuz profil componentlerine kişi özelliklerini prop olarak gönderelim.*** 
 
@@ -249,7 +249,7 @@ export default function Gallery() {
 }
 ```
 
-<h3>Challenge 2 of 3: Adjust the image size based on a prop </h3>
+<h3 style="color:DarkOrange">Challenge 2 of 3: Adjust the image size based on a prop </h3>
 
 ```
 import { getImageUrl } from './utils.js';
@@ -279,7 +279,7 @@ export default function Profile() {
 }
 
 ```
-<h3>Solution 2 of 3: Adjust the image size based on a prop</h3>
+<h3 style="color:Green">Solution 2 of 3: Adjust the image size based on a prop</h3>
 
 
 💫 ***Kullandığımız resimlerin başka bir sekmede verilen boyutlara göre açılması istenmektedir. Burada amaç tanımladığımız propların component içinde verileri değiştirerek tekrar tekrar ve farklı boyutlarda kullanabildiğimizi görmektir. Çözümde atlanmaması gereken küçük bir ayrıntı ise kapsayıcı fragment kullanımıdır. Eklenen çoklu compenentler için kapsayıcı <> </> kullanılmadığında hata vermektedir.***
@@ -326,7 +326,7 @@ export default function Profile() {
 
 ```
 
-<h3>Challenge 3 of 3: Passing JSX in a children prop</h3>
+<h3 style="color:DarkOrange">Challenge 3 of 3: Passing JSX in a children prop</h3>
 
 ```
 export default function Profile() {
@@ -355,7 +355,7 @@ export default function Profile() {
 }
 ```
 
-<h3>Solution 3 of 3: Passing JSX in a children prop</h3>
+<h3 style="color:Green">Solution 3 of 3: Passing JSX in a children prop</h3>
 
 💫 ***JSX olarak gönderilen ve tekrar tekrar kullanılan özelliklerin prop olarak gönderilmesi istenmektedir.***
 
@@ -393,9 +393,9 @@ export default function Profile() {
 
 ```
 
-**<h2>Conditional Rendering</h2>**
+**<h2 style="color:OrangeRed">Conditional Rendering</h2>**
 
-<h3>Challenge 1 of 3: Show an icon for incomplete items</h3>
+<h3 style="color:DarkOrange">Challenge 1 of 3: Show an icon for incomplete items</h3>
 
 ```
 function Item({ name, isPacked }) {
@@ -430,7 +430,7 @@ export default function PackingList() {
 
 ```
 
-<h3>Solution 1 of 3: Show an icon for incomplete items</h3>
+<h3 style="color:Green">Solution 1 of 3: Show an icon for incomplete items</h3>
 
 💫 ***Koşul operatörleri kullanarak, koşul sağlanıyorsa '✔' sağlanmıyorsa '❌' işaretlerini kullanmamız istenmektedir.***
 
@@ -467,7 +467,7 @@ export default function PackingList() {
 
 ```
 
-<h3>Challenge 2 of 3: Show the item importance</h3>
+<h3 style="color:DarkOrange">Challenge 2 of 3: Show the item importance</h3>
 
 ```
 function Item({ name, importance }) {
@@ -501,7 +501,7 @@ export default function PackingList() {
 }
 ```
 
-<h3>Solution 2 of 3: Show the item importance</h3>
+<h3 style="color:Green">Solution 2 of 3: Show the item importance</h3>
 
 💫 ***Yazılan maddelerin önem derecesinin '&&' operatör kullanarak italik ve arada bir boşluk bırakılmış şekilde yazılması istenmektedir.***
 
@@ -537,6 +537,88 @@ export default function PackingList() {
         />
       </ul>
     </section>
+  );
+}
+
+```
+**<h2 style="color:OrangeRed">Rendering List</h2>**
+
+<h3 style="color:DarkOrange">Challenge 1 of 4: Splitting a list in two</h3>
+
+```
+export default function List() {
+  const listItems = people.map(person =>
+    <li key={person.id}>
+      <img
+        src={getImageUrl(person)}
+        alt={person.name}
+      />
+      <p>
+        <b>{person.name}:</b>
+        {' ' + person.profession + ' '}
+        known for {person.accomplishment}
+      </p>
+    </li>
+  );
+  return (
+    <article>
+      <h1>Scientists</h1>
+      <ul>{listItems}</ul>
+    </article>
+  );
+}
+```
+
+<h3 style="color:Green">Solution 1 of 4: Splitting a list in two</h3>
+
+💫 ***Verilen kişi listesini kimyagerler ve diğer herkes olarak ikiye ayırmamız istenmektedir. Önce filter metoduyla kimyager sorgusu yapalım. Ardından map metoduyla iki ayrı liste şeklinde döndürelim***
+
+*Eğer diğer örnekleri de incelemek isterseniz bu challenge sayfasını linkliyorum [Rendering List](https://react.dev/learn/rendering-lists).*
+
+```
+export default function List() {
+  const chemists = people.filter(person =>
+    person.profession === 'chemist'
+  );
+  const everyoneElse = people.filter(person =>
+    person.profession !== 'chemist'
+  );
+  return (
+    <article>
+      <h1>Scientists</h1>
+      <h2>Chemists</h2>
+      <ul>
+        {chemists.map(person =>
+          <li key={person.id}>
+            <img
+              src={getImageUrl(person)}
+              alt={person.name}
+            />
+            <p>
+              <b>{person.name}:</b>
+              {' ' + person.profession + ' '}
+              known for {person.accomplishment}
+            </p>
+          </li>
+        )}
+      </ul>
+      <h2>Everyone Else</h2>
+      <ul>
+        {everyoneElse.map(person =>
+          <li key={person.id}>
+            <img
+              src={getImageUrl(person)}
+              alt={person.name}
+            />
+            <p>
+              <b>{person.name}:</b>
+              {' ' + person.profession + ' '}
+              known for {person.accomplishment}
+            </p>
+          </li>
+        )}
+      </ul>
+    </article>
   );
 }
 
