@@ -699,3 +699,36 @@ export default function RecipeList() {
 >- garlic cloves
 >- lemon
 >- tahini
+
+<h3 style="color:DarkOrange">Challenge 3 of 4: Extracting a list item component </h3>
+
+💫 ***Yukardaki yemek listesi örneğindeki aynı verileri kullanarak sık tekrar eden özelliklerin prop geçilerek yeni bir componentle fonksiyona çağırılması istenmektedir. Çıktımız yine aynı olacaktır. Sadece kod ekranımız biraz daha sade ve okunabilir hale gelecektir.***
+
+<h3 style="color:Green">Solution 3 of 4: Extracting a list item component </h3>
+
+```
+function Recipe({ id, name, ingredients }) {
+  return (
+    <div>
+      <h2>{name}</h2>
+      <ul>
+        {ingredients.map(ingredient =>
+          <li key={ingredient}>{ingredient}</li>
+        )}
+      </ul>
+    </div>
+  );
+}
+
+export default function RecipeList() {
+  return (
+    <div>
+      <h1>Recipes</h1>
+      {recipes.map(recipe =>
+        <Recipe {...recipe} key={recipe.id} />
+      )}
+    </div>
+  );
+}
+
+```
