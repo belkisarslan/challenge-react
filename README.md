@@ -623,3 +623,79 @@ export default function List() {
 }
 
 ```
+
+<h3 style="color:DarkOrange">Challenge 2 of 4: Nested lists in one component </h3>
+
+```
+export default function RecipeList() {
+  const recipes = [{
+  id: 'greek-salad',
+  name: 'Greek Salad',
+  ingredients: ['tomatoes', 'cucumber', 'onion', 'olives', 'feta']
+}, {
+  id: 'hawaiian-pizza',
+  name: 'Hawaiian Pizza',
+  ingredients: ['pizza crust', 'pizza sauce', 'mozzarella', 'ham', 'pineapple']
+}, {
+  id: 'hummus',
+  name: 'Hummus',
+  ingredients: ['chickpeas', 'olive oil', 'garlic cloves', 'lemon', 'tahini']
+}];
+
+  return (
+    <div>
+      <h1>Recipes</h1>
+    </div>
+  );
+}
+
+```
+
+<h3 style="color:Green">Solution 2 of 4: Nested lists in one component </h3>
+
+💫 ***Verilen yemek listesini iç içe map metodu uygulayarak önce yemek adı ardından malzeme listesi şeklinde döndürmemiz istenmektedir.***
+
+```
+export default function RecipeList() {
+  return (
+    <div>
+      <h1>Recipes</h1>
+      {recipes.map(recipe =>
+        <div key={recipe.id}>
+          <h2>{recipe.name}</h2>
+          <ul>
+            {recipe.ingredients.map(ingredient =>
+              <li key={ingredient}>
+                {ingredient}
+              </li>
+            )}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+```
+🔔 ***Çıktı bu şekilde görünmektedir.***
+
+>
+># Recipes
+>## Greek Salad
+>- tomatoes
+>- cucumber
+>- onion
+>- olives
+>- feta
+>## Hawaiian Pizza
+>- pizza crust
+>- pizza sauce
+>- mozzarella
+>- ham
+>- pineapple
+>## Hummus
+>- chickpeas
+>- olive oil
+>- garlic cloves
+>- lemon
+>- tahini
