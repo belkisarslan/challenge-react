@@ -1,5 +1,6 @@
 import Hero from '@/components/hero'
 import Reducer from '@/components/reducer'
+import RenderingList from '@/components/renderingList'
 import { State } from '@/components/state'
 import React from 'react'
 
@@ -18,6 +19,8 @@ export default function Exercise() {
       <State/>
       <Reducer/>
      </div>
+
+     <RenderingList/>
     </div>
   )
 }
