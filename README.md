@@ -732,3 +732,111 @@ export default function RecipeList() {
 }
 
 ```
+
+<h3 style="color:DarkOrange">Challenge 4 of 4: List with a separator</h3>
+
+```
+const poem = {
+  lines: [
+    'I write, erase, rewrite',
+    'Erase again, and then',
+    'A poppy blooms.'
+  ]
+};
+
+export default function Poem() {
+  return (
+    <article>
+      {poem.lines.map((line, index) =>
+        <p key={index}>
+          {line}
+        </p>
+      )}
+    </article>
+  );
+}
+```
+
+<h3 style="color:Green">Solution 4 of 4: List with a separator</h3>
+
+💫 ***Verilen şiirin satır aralarına çizgi çekmemiz istenmektedir.***
+
+1.Çözüm
+
+```
+const poem = {
+  lines: [
+    'I write, erase, rewrite',
+    'Erase again, and then',
+    'A poppy blooms.'
+  ]
+};
+
+export default function Poem() {
+  let output = [];
+
+  // Fill the output array
+  poem.lines.forEach((line, i) => {
+    output.push(
+      <hr key={i + '-separator'} />
+    );
+    output.push(
+      <p key={i + '-text'}>
+        {line}
+      </p>
+    );
+  });
+  // Remove the first <hr />
+  output.shift();
+
+  return (
+    <article>
+      {output}
+    </article>
+  );
+}
+
+```
+❗ ***1. çözümde kullanılan key={i + '-separator'} ve key={i + '-text'} açıklamaların nedeni aynı key'e sahip iki children kullanılamayacağı içindir. Fragment kullanarak bu işlemden kaçınabiliriz. 2. çözüm fragment kullanılmış çözümdür.***
+
+2.Çözüm
+
+```
+import { Fragment } from 'react';
+
+const poem = {
+  lines: [
+    'I write, erase, rewrite',
+    'Erase again, and then',
+    'A poppy blooms.'
+  ]
+};
+
+export default function Poem() {
+  return (
+    <article>
+      {poem.lines.map((line, i) =>
+        <Fragment key={i}>
+          {i > 0 && <hr />}
+          <p>{line}</p>
+        </Fragment>
+      )}
+    </article>
+  );
+}
+
+```
+
+❗ ***{i > 0} ifadesi çizginin ilk dizeden hemen sonra başlaması içindir. Tıpkı ilk örnekteki shift() metodunun kullanılması gibi. Aksi takdirde ilk dizenin üstünden başlamaktadır.***
+
+🔔 ***Çıktı bu şekilde görünmektedir.***
+
+
+>I write, erase, rewrite
+>***
+>Erase again, and then
+>***
+>A poppy blooms.
+
+
+💖 *Bu challenge benim için çok zevkliydi.*
