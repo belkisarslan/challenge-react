@@ -1,3 +1,4 @@
+import { AddingInteractivity } from '@/components/addingInteractivity'
 import Hero from '@/components/hero'
 import Reducer from '@/components/reducer'
 import RenderingList from '@/components/renderingList'
@@ -21,6 +22,7 @@ export default function Exercise() {
      </div>
 
      <RenderingList/>
+     <AddingInteractivity/>
     </div>
   )
 }
