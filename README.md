@@ -840,3 +840,29 @@ export default function Poem() {
 
 
 💖 *Bu challenge benim için çok zevkliydi.*
+
+**<h2 style="color:OrangeRed">Responding to Events</h2>**
+
+<h3 style="color:DarkOrange">Challenge 1 of 2: Fix an event handler</h3>
+
+💫 ***Verilen butona tıklandığında tema renginin değişmesi beklenmektedir ancak değişmemektedir. Hatayı bulmamız isteniyor.***
+
+```
+ return (
+    <button onClick={handleClick()}>
+      Toggle the lights
+    </button>
+  );
+```
+
+<h3 style="color:Green">Solution 1 of 2: Fix an event handler</h3>
+
+💫 ***Örnekte handleClick( ) fonksiyonu parantezli olarak kullanılarak hemen çalıştırılmıştır. Ancak biz tıklandığında çalışmasını istiyoruz. Parantezleri silerek işlemin çağrıldığı zaman çalışmasını sağlamalıyız.*** 
+
+```
+ return (
+    <button onClick={handleClick}>
+      Toggle the lights
+    </button>
+  );
+```
