@@ -866,3 +866,42 @@ export default function Poem() {
     </button>
   );
 ```
+
+<h3 style="color:DarkOrange">Challenge 2 of 2: Wire up the events 
+</h3>
+
+💫 ***Verilen renk değiştirme butonuna tıklandığında ana componente bağlı olarak sayaç artmakta ancak renk değişmemektedir. Bizden istenen ise, butonun renk değiştirmek için kullanılırken sayacın artmamasını sağlamaktır.***
+
+```
+export default function ColorSwitch({
+  onChangeColor
+}) {
+  return (
+    <button>
+      Change color
+    </button>
+  );
+}
+```
+
+<h3 style="color:Green">Solution 2 of 2: Wire up the events 
+</h3>
+
+💫 ***Bu gibi durumlarda, yani bir alt bileşen her çağrıldığında üst bileşene çağrı yapmasını engellemek için e.stopPropagation( ) kullanılır.***
+
+```
+export default function ColorSwitch({
+  onChangeColor
+}) {
+  return (
+    <button onClick={e => {
+      e.stopPropagation();
+      onChangeColor();
+    }}>
+      Change color
+    </button>
+  );
+}
+```
+
+*Eğer örnekleri incelemek ve konu anlatımını okumak isterseniz bu challenge sayfasını linkliyorum. 👉 [Responding to Events](https://react.dev/learn/responding-to-events)*
