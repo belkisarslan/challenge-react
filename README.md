@@ -905,3 +905,15 @@ export default function ColorSwitch({
 ```
 
 *Eğer örnekleri incelemek ve konu anlatımını okumak isterseniz bu challenge sayfasını linkliyorum. 👉 [Responding to Events](https://react.dev/learn/responding-to-events)*
+
+**<h2 style="color:OrangeRed">State: A Component's Memory</h2>**
+
+<h3 style="color:DarkOrange">Challenge 1 of 4: Complete the gallery </h3>
+
+💫 ***Bu challengeda 'next' butonuna basıldığında galerideki fotoğraflar ilerlemektedir. Ancak son fotoğrafa gelindiğinde hata vermektedir. Bizden istenen ise ya fotoğraf bitince ileri butonunu devre dışı bırakmamız ya da koşul ekleyerek fotoğrafların devam etmesini sağlamamız.***
+
+<h3 style="color:Green">Challenge 1 of 4: Complete the gallery </h3>
+
+💫 Ben fotoğrafların devam edeceği şekilde çözdüm. Bu challengeı canlıya aldım. 
+
+👉 [Live: Complete the gallery](https://challenge-react-jade.vercel.app/exercise)
