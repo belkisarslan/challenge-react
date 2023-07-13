@@ -964,3 +964,35 @@ export default function Form() {
     setLastName('');
   }
 ```
+
+<h3 style="color:DarkOrange">Challenge 3 of 4: Fix a crash</h3>
+
+💫 ***Form gönderildikten sonra ekranda bir teşekkür mesajı görünmesi istenmektedir. Ancak görünmemektedir. Hatayı gidermeliyiz.***
+
+```javascript
+import { useState } from 'react';
+
+export default function FeedbackForm() {
+  const [isSent, setIsSent] = useState(false);
+  if (isSent) {
+    return <h1>Thank you!</h1>;
+  } else {
+    const [message, setMessage] = useState('')
+  }
+```
+
+<h3 style="color:Green">Solution 3 of 4: Fix a crash</h3>
+
+💫 ***Hooklar componentin yalnızca en üst seviyesinde ve aynı sırada çağırılmalıdır. Koşul içinde verilen state tanımlamasını yukarı taşımalıyız.***
+
+```javascript
+import { useState } from 'react';
+
+export default function FeedbackForm() {
+  const [isSent, setIsSent] = useState(false);
+  const [message, setMessage] = useState('');
+
+  if (isSent) {
+    return <h1>Thank you!</h1>;
+  }
+```
