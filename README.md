@@ -996,3 +996,45 @@ export default function FeedbackForm() {
     return <h1>Thank you!</h1>;
   }
 ```
+
+<h3 style="color:DarkOrange">Challenge 4 of 4: Remove unnecessary state</h3>
+
+💫 ***Gereksiz state tanımlamasını kaldırmamız istenmiştir. Peki neden gereksiz?***
+
+```javascript
+import { useState } from 'react';
+
+export default function FeedbackForm() {
+  const [name, setName] = useState('');
+
+  function handleClick() {
+    setName(prompt('What is your name?'));
+    alert(`Hello, ${name}!`);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Greet
+    </button>
+  );
+}
+```
+
+<h3 style="color:Green">Solution 4 of 4: Remove unnecessary state</h3>
+
+💫 ***Çünkü state değişkenleri yalnızca yeniden oluşturulma durumlarında bilgiyi tutması için kullanılır. Örneğimizde tek bir girdi vardır ve normal değişken olarak kaydedilmesi yeterlidir.***
+
+```javascript
+export default function FeedbackForm() {
+  function handleClick() {
+    const name = prompt('What is your name?');
+    alert(`Hello, ${name}!`);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Greet
+    </button>
+  );
+}
+```
