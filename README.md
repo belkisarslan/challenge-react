@@ -912,8 +912,55 @@ export default function ColorSwitch({
 
 💫 ***Bu challengeda 'next' butonuna basıldığında galerideki fotoğraflar ilerlemektedir. Ancak son fotoğrafa gelindiğinde hata vermektedir. Bizden istenen ise ya fotoğraf bitince ileri butonunu devre dışı bırakmamız ya da koşul ekleyerek fotoğrafların devam etmesini sağlamamız.***
 
-<h3 style="color:Green">Challenge 1 of 4: Complete the gallery </h3>
+<h3 style="color:Green">Solution 1 of 4: Complete the gallery </h3>
 
 💫 Ben fotoğrafların devam edeceği şekilde çözdüm. Bu challengeı canlıya aldım. 
 
 👉 [Live: Complete the gallery](https://challenge-react-jade.vercel.app/exercise)
+
+<h3 style="color:DarkOrange">Challenge 2 of 4: Fix stuck form inputs</h3>
+
+💫 ***Birden fazla değişkenli bir formu state kullanarak çalışır hale getirmemiz istenmektedir.***
+
+```javascript
+export default function Form() {
+  let firstName = '';
+  let lastName = '';
+
+  function handleFirstNameChange(e) {
+    firstName = e.target.value;
+  }
+
+  function handleLastNameChange(e) {
+    lastName = e.target.value;
+  }
+
+  function handleReset() {
+    firstName = '';
+    lastName = '';
+  }
+
+```
+
+<h3 style="color:Green">Solution 2 of 4: Fix stuck form inputs</h3>
+
+```javascript
+import { useState } from 'react';
+
+export default function Form() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+
+  function handleFirstNameChange(e) {
+    setFirstName(e.target.value);
+  }
+
+  function handleLastNameChange(e) {
+    setLastName(e.target.value);
+  }
+
+  function handleReset() {
+    setFirstName('');
+    setLastName('');
+  }
+```
