@@ -4,10 +4,23 @@ Merhabalar👋,
 
 Yeni react dokümanındaki challengeları çözmeye başladığım bir repo oluşturdum.
 
-**<h2 style="color:OrangeRed">Your First Component</h2>**
+<img src="https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=600" alt="react" style="border-radius:8px;display:block;float:none;margin-left:auto;margin-right:auto"/>
+<br>
+ 
+> 
+> * [Your First Component](#your-first-component)
+> * [Passing Props to a Component](#passing-props-to-a-component)
+> * [Conditional Rendering](#conditional-rendering)
+> * [Rendering List](#rendering-list)
+> * [Responding to Events](#responding-to-events)
+> * [State: A Component's Memory](#state-a-components-memory)
+> 
+
+## Your First Component
+
 <h3 style="color:DarkOrange">Challenge 1 of 4: Export the component</h3>
 
-```
+```javascript
 function Profile() {
   return (
     <img
@@ -20,7 +33,7 @@ function Profile() {
 ```
 <h3 style="color:Green">Solutation 1 of 4: Export the component</h3>
 
-```
+```javascript
 export default function Profile() {
   return (
     <img
@@ -33,7 +46,7 @@ export default function Profile() {
 ```
 <h3 style="color:DarkOrange">Challenge 2 of 4: Fix the return statement </h3>
 
-```
+```javascript
 export default function Profile() {
   return
     <img src="https://i.imgur.com/jA8hHMpm.jpg" alt="Katsuko Saruhashi" />;
@@ -46,7 +59,7 @@ export default function Profile() {
 
 💫 ***return işlemi için ( ) parantez açılmalıdır.***   
 
-```
+```javascript
 export default function Profile() {
   return(
   <img src="https://i.imgur.com/jA8hHMpm.jpg" alt="Katsuko     Saruhashi" />
@@ -56,7 +69,7 @@ export default function Profile() {
 
 <h3 style="color:DarkOrange">Challenge 3 of 4: Spot the mistake</h3>
 
-```
+```javascript
 function profile() {
   return (
     <img
@@ -83,7 +96,7 @@ export default function Gallery() {
 
 💫 ***Component isimleri büyük harfle başlamalıdır.*** 
 
-```
+```javascript
 function Profile() {
   return (
     <img
@@ -110,17 +123,20 @@ export default function Gallery() {
 
 💫 ***Son olarak sıfırdan bir component oluşturmamız istenmektedir. Component ismini büyük yapmayı, Export etmeyi ve return döndürmeyi unutmayın :)*** 
 
-```
+```javascript
 export default function Blog(){
   return <h1>Good job!</h1>
 }
 ```
 
-**<h2 style="color:OrangeRed">Passing Props to a Component</h2>**
+<img src="https://images.pexels.com/photos/5310564/pexels-photo-5310564.jpeg?auto=compress&cs=tinysrgb&w=600" alt="done" style="border-radius:8px;display:block;float:none;margin-left:auto;margin-right:auto"/>
+
+
+## Passing Props to a Component
 
 <h3 style="color:DarkOrange">Challenge 1 of 3: Extract a component </h3>
 
-```
+```javascript
 import { getImageUrl } from './utils.js';
 
 export default function Gallery() {
@@ -185,7 +201,7 @@ export default function Gallery() {
 
 💫 ***Sık tekrarlanan elementlerin prop geçilerek kodların sadeleştirilmesi istenmektedir. İki kişi için hazırlanan kart bilgilerini teke düşürelim ve ardında oluşturduğumuz profil componentlerine kişi özelliklerini prop olarak gönderelim.*** 
 
-```
+```javascript
 import { getImageUrl } from './utils.js';
 
 function Profile({ person, imageSize = 70 }) {
@@ -251,7 +267,7 @@ export default function Gallery() {
 
 <h3 style="color:DarkOrange">Challenge 2 of 3: Adjust the image size based on a prop </h3>
 
-```
+```javascript
 import { getImageUrl } from './utils.js';
 
 function Avatar({ person, size }) {
@@ -284,7 +300,7 @@ export default function Profile() {
 
 💫 ***Kullandığımız resimlerin başka bir sekmede verilen boyutlara göre açılması istenmektedir. Burada amaç tanımladığımız propların component içinde verileri değiştirerek tekrar tekrar ve farklı boyutlarda kullanabildiğimizi görmektir. Çözümde atlanmaması gereken küçük bir ayrıntı ise kapsayıcı fragment kullanımıdır. Eklenen çoklu compenentler için kapsayıcı <> </> kullanılmadığında hata vermektedir.***
 
-```
+```javascript
 import { getImageUrl } from './utils.js';
 
 function Avatar({ person, size }) {
@@ -328,7 +344,7 @@ export default function Profile() {
 
 <h3 style="color:DarkOrange">Challenge 3 of 3: Passing JSX in a children prop</h3>
 
-```
+```javascript
 export default function Profile() {
   return (
     <div>
@@ -359,7 +375,7 @@ export default function Profile() {
 
 💫 ***JSX olarak gönderilen ve tekrar tekrar kullanılan özelliklerin prop olarak gönderilmesi istenmektedir.***
 
-```
+```javascript
 function Card({ children }) {
   return (
     <div className="card">
@@ -393,11 +409,13 @@ export default function Profile() {
 
 ```
 
-**<h2 style="color:OrangeRed">Conditional Rendering</h2>**
+<img src="https://images.pexels.com/photos/684363/pexels-photo-684363.jpeg?auto=compress&cs=tinysrgb&w=600" alt="dontStop" style="border-radius:8px;display:block;float:none;margin-left:auto;margin-right:auto"/>
+
+## Conditional Rendering
 
 <h3 style="color:DarkOrange">Challenge 1 of 3: Show an icon for incomplete items</h3>
 
-```
+```javascript
 function Item({ name, isPacked }) {
   return (
     <li className="item">
@@ -434,7 +452,7 @@ export default function PackingList() {
 
 💫 ***Koşul operatörleri kullanarak, koşul sağlanıyorsa '✔' sağlanmıyorsa '❌' işaretlerini kullanmamız istenmektedir.***
 
-```
+```javascript
 function Item({ name, isPacked }) {
   return (
     <li className="item">
@@ -469,7 +487,7 @@ export default function PackingList() {
 
 <h3 style="color:DarkOrange">Challenge 2 of 3: Show the item importance</h3>
 
-```
+```javascript
 function Item({ name, importance }) {
   return (
     <li className="item">
@@ -505,7 +523,7 @@ export default function PackingList() {
 
 💫 ***Yazılan maddelerin önem derecesinin '&&' operatör kullanarak italik ve arada bir boşluk bırakılmış şekilde yazılması istenmektedir.***
 
-```
+```javascript
 function Item({ name, importance }) {
   return (
     <li className="item">
@@ -541,11 +559,14 @@ export default function PackingList() {
 }
 
 ```
-**<h2 style="color:OrangeRed">Rendering List</h2>**
+
+<img src="https://images.pexels.com/photos/669986/pexels-photo-669986.jpeg?auto=compress&cs=tinysrgb&w=600" alt="make it" style="border-radius:8px;display:block;float:none;margin-left:auto;margin-right:auto"/>
+
+## Rendering List
 
 <h3 style="color:DarkOrange">Challenge 1 of 4: Splitting a list in two</h3>
 
-```
+```javascript
 export default function List() {
   const listItems = people.map(person =>
     <li key={person.id}>
@@ -575,7 +596,7 @@ export default function List() {
 
 *Eğer diğer örnekleri de incelemek isterseniz bu challenge sayfasını linkliyorum [Rendering List](https://react.dev/learn/rendering-lists).*
 
-```
+```javascript
 export default function List() {
   const chemists = people.filter(person =>
     person.profession === 'chemist'
@@ -626,7 +647,7 @@ export default function List() {
 
 <h3 style="color:DarkOrange">Challenge 2 of 4: Nested lists in one component </h3>
 
-```
+```javascript
 export default function RecipeList() {
   const recipes = [{
   id: 'greek-salad',
@@ -655,7 +676,7 @@ export default function RecipeList() {
 
 💫 ***Verilen yemek listesini iç içe map metodu uygulayarak önce yemek adı ardından malzeme listesi şeklinde döndürmemiz istenmektedir.***
 
-```
+```javascript
 export default function RecipeList() {
   return (
     <div>
@@ -706,7 +727,7 @@ export default function RecipeList() {
 
 <h3 style="color:Green">Solution 3 of 4: Extracting a list item component </h3>
 
-```
+```javascript
 function Recipe({ id, name, ingredients }) {
   return (
     <div>
@@ -735,7 +756,7 @@ export default function RecipeList() {
 
 <h3 style="color:DarkOrange">Challenge 4 of 4: List with a separator</h3>
 
-```
+```javascript
 const poem = {
   lines: [
     'I write, erase, rewrite',
@@ -763,7 +784,7 @@ export default function Poem() {
 
 1.Çözüm
 
-```
+```javascript
 const poem = {
   lines: [
     'I write, erase, rewrite',
@@ -801,7 +822,7 @@ export default function Poem() {
 
 2.Çözüm
 
-```
+```javascript
 import { Fragment } from 'react';
 
 const poem = {
@@ -841,13 +862,16 @@ export default function Poem() {
 
 💖 *Bu challenge benim için çok zevkliydi.*
 
-**<h2 style="color:OrangeRed">Responding to Events</h2>**
+
+<img src="https://images.pexels.com/photos/8695313/pexels-photo-8695313.jpeg?auto=compress&cs=tinysrgb&w=600" alt="keep trying" style="border-radius:8px;display:block;float:none;margin-left:auto;margin-right:auto"/>
+
+## Responding to Events
 
 <h3 style="color:DarkOrange">Challenge 1 of 2: Fix an event handler</h3>
 
 💫 ***Verilen butona tıklandığında tema renginin değişmesi beklenmektedir ancak değişmemektedir. Hatayı bulmamız isteniyor.***
 
-```
+```javascript
  return (
     <button onClick={handleClick()}>
       Toggle the lights
@@ -859,7 +883,7 @@ export default function Poem() {
 
 💫 ***Örnekte handleClick( ) fonksiyonu parantezli olarak kullanılarak hemen çalıştırılmıştır. Ancak biz tıklandığında çalışmasını istiyoruz. Parantezleri silerek işlemin çağrıldığı zaman çalışmasını sağlamalıyız.*** 
 
-```
+```javascript
  return (
     <button onClick={handleClick}>
       Toggle the lights
@@ -872,7 +896,7 @@ export default function Poem() {
 
 💫 ***Verilen renk değiştirme butonuna tıklandığında ana componente bağlı olarak sayaç artmakta ancak renk değişmemektedir. Bizden istenen ise, butonun renk değiştirmek için kullanılırken sayacın artmamasını sağlamaktır.***
 
-```
+```javascript
 export default function ColorSwitch({
   onChangeColor
 }) {
@@ -889,7 +913,7 @@ export default function ColorSwitch({
 
 💫 ***Bu gibi durumlarda, yani bir alt bileşen her çağrıldığında üst bileşene çağrı yapmasını engellemek için e.stopPropagation( ) kullanılır.***
 
-```
+```javascript
 export default function ColorSwitch({
   onChangeColor
 }) {
@@ -906,7 +930,11 @@ export default function ColorSwitch({
 
 *Eğer örnekleri incelemek ve konu anlatımını okumak isterseniz bu challenge sayfasını linkliyorum. 👉 [Responding to Events](https://react.dev/learn/responding-to-events)*
 
-**<h2 style="color:OrangeRed">State: A Component's Memory</h2>**
+<img src="https://images.pexels.com/photos/5314960/pexels-photo-5314960.jpeg?auto=compress&cs=tinysrgb&w=600" alt="move on" style="border-radius:8px;display:block;float:none;margin-left:auto;margin-right:auto;height:400px"/>
+
+
+
+## State: A Component's Memory
 
 <h3 style="color:DarkOrange">Challenge 1 of 4: Complete the gallery </h3>
 
@@ -1038,3 +1066,9 @@ export default function FeedbackForm() {
   );
 }
 ```
+
+*Eğer örnekleri incelemek ve konu anlatımını okumak isterseniz bu challenge sayfasını linkliyorum. 👉 [State: A Component's Memory](https://react.dev/learn/state-a-components-memory)*
+
+
+
+<img src="https://images.pexels.com/photos/14019519/pexels-photo-14019519.jpeg?auto=compress&cs=tinysrgb&w=600" alt="work in progress" style="border-radius:8px;display:block;float:none;margin-left:auto;margin-right:auto"/>
