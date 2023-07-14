@@ -31,7 +31,7 @@ function Profile() {
 }
 
 ```
-<h3 style="color:Green">Solutation 1 of 4: Export the component</h3>
+<h3 style="color:Green">Solution 1 of 4: Export the component</h3>
 
 ```javascript
 export default function Profile() {
@@ -121,7 +121,7 @@ export default function Gallery() {
 <h3 style="color:DarkOrange">Challenge 4 of 4: Your own component</h3>
 <h3 style="color:Green">Solution 4 of 4: Your own component</h3>
 
-💫 ***Son olarak sıfırdan bir component oluşturmamız istenmektedir. Component ismini büyük yapmayı, Export etmeyi ve return döndürmeyi unutmayın :)*** 
+💫 ***Son olarak sıfırdan bir component oluşturmamız istenmektedir. Component ismini büyük yapmayı, Export etmeyi ve return etmeyi unutmayın :)*** 
 
 ```javascript
 export default function Blog(){
