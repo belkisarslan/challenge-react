@@ -14,6 +14,7 @@ Yeni react dokümanındaki challengeları çözmeye başladığım bir repo olu�
 > * [Rendering List](#rendering-list)
 > * [Responding to Events](#responding-to-events)
 > * [State: A Component's Memory](#state-a-components-memory)
+>* [State as a Snapshot](#state-as-a-snapshot)
 > 
 
 ## Your First Component
@@ -1072,3 +1073,32 @@ export default function FeedbackForm() {
 
 
 <img src="https://images.pexels.com/photos/14019519/pexels-photo-14019519.jpeg?auto=compress&cs=tinysrgb&w=600" alt="work in progress" style="border-radius:8px;display:block;float:none;margin-left:auto;margin-right:auto"/>
+
+## State as a Snapshot
+
+<h3 style="color:DarkOrange">Challenge 1 of 1: Implement a traffic light</h3>
+
+💫 ***Verilen trafik lambasında bir sonraki adımı alert olarak gösterecek şekilde ayarlamamız istenmektedir. Yani eğer ekranda Yürü! yazıyorsa bir sonra adım Dur! olmalıdır.***
+
+```javascript
+export default function TrafficLight() {
+  const [walk, setWalk] = useState(true);
+
+  function handleClick() {
+    setWalk(!walk);
+  }
+```
+
+<h3 style="color:Green">Challenge 1 of 1: Implement a traffic light</h3>
+
+```javascript
+export default function TrafficLight() {
+  const [walk, setWalk] = useState(true);
+
+  function handleClick() {
+    setWalk(!walk);
+    alert(walk ? 'Stop is next' : 'Walk is next');
+  }
+
+```
+*Eğer örnekleri incelemek ve konu anlatımını okumak isterseniz bu challenge sayfasını linkliyorum. 👉 [State as a Snapshot](https://react.dev/learn/state-as-a-snapshot)*
