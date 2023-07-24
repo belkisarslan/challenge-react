@@ -15,6 +15,7 @@ Yeni react dokümanındaki challengeları çözmeye başladığım bir repo olu�
 > * [Responding to Events](#responding-to-events)
 > * [State: A Component's Memory](#state-a-components-memory)
 >* [State as a Snapshot](#state-as-a-snapshot)
+>* [Queueing a Series of State Updates](#queueing-a-series-of-state-updates)
 > 
 
 ## Your First Component
@@ -1089,7 +1090,7 @@ export default function TrafficLight() {
   }
 ```
 
-<h3 style="color:Green">Challenge 1 of 1: Implement a traffic light</h3>
+<h3 style="color:Green">Solution 1 of 1: Implement a traffic light</h3>
 
 ```javascript
 export default function TrafficLight() {
@@ -1102,3 +1103,45 @@ export default function TrafficLight() {
 
 ```
 *Eğer örnekleri incelemek ve konu anlatımını okumak isterseniz bu challenge sayfasını linkliyorum. 👉 [State as a Snapshot](https://react.dev/learn/state-as-a-snapshot)*
+
+## Queueing a Series of State Updates
+
+<img src="https://images.pexels.com/photos/3801422/pexels-photo-3801422.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Queueing a Series of State Updates" style="border-radius:8px;display:block;float:none;margin-left:auto;margin-right:auto"/>
+
+<h3 style="color:DarkOrange">Challenge 1 of 2: Fix a request counter </h3>
+
+💫 ***Verilen sipariş sayacını düzeltmemiz istenmektedir. Bir ürün için satın al butonuna basıldığında 'beklemede' yazan kısmın artıp satış gerçeklestikten sonra 'tamamlandı' yazan kısmın artarken 'beklemede' yazan kısmın aynı oranda azalması beklenmektedir. Örneğin;*** 
+- 1 sipariş alındı - 1 ürün bekleme - 0 ürün satıldı
+- 1 ürün satıldı - 0 ürün beklemede
+- 2 sipariş alındı - 2 ürün beklemede - 0 ürün satıldı
+- 2 ürün satıldı - 0 ürün beklemede
+
+```javascript
+export default function RequestTracker() {
+  const [pending, setPending] = useState(0);
+  const [completed, setCompleted] = useState(0);
+
+  async function handleClick() {
+    setPending(pending + 1);
+    await delay(3000);
+    setPending(pending - 1);
+    setCompleted(completed + 1);
+  }
+```
+
+<h3 style="color:Green">Solution 1 of 2: Fix a request counter </h3>
+
+💫 ***Birden fazla state güncellemek istersek n => n +  1 formülünü kullanırız.*** 
+
+```javascript
+export default function RequestTracker() {
+  const [pending, setPending] = useState(0);
+  const [completed, setCompleted] = useState(0);
+
+  async function handleClick() {
+    setPending(p => p + 1);
+    await delay(3000);
+    setPending(p => p - 1);
+    setCompleted(c => c + 1);
+  }
+```
