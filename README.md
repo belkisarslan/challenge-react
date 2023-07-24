@@ -1145,3 +1145,86 @@ export default function RequestTracker() {
     setCompleted(c => c + 1);
   }
 ```
+
+<h3 style="color:DarkOrange">Challenge 2 of 2: Implement the state queue yourself</h3>
+
+💫 ***Bu konunun özeti olarak değişiklik sonrası state güncellemelerini, güncelleme sonrası state değişiklikleri ve batching işlemini kapsayan bir örnek çözmemiz isteniyor. Sonucun aşağıdaki gibi görünmesi beklenmektedir.*** 
+
+```javascript
+//özet
+//updater function.React adds that function to its queue.
+n => n + 1 
+
+//update state after replacing. React stores 6 as the final result and returns it from useState.
+<button onClick={() => {
+  setNumber(number + 5);
+  setNumber(n => n + 1); // 5 + 1 = 6
+}}>
+
+//replace state after updating. React adds “replace with 42” to its queue.
+<button onClick={() => {
+  setNumber(number + 5);
+  setNumber(n => n + 1);
+  setNumber(42);
+}}>
+```
+
+>Base state: 0
+>
+>Queue: [1, 1, 1]
+>
+>Expected result: 1
+>
+>Your result: 1 (correct)
+>***
+>Base state: 0
+>
+>Queue: [n => n+1, n => n+1, n => n+1]
+>
+>Expected result: 3
+>
+>Your result: 3 (correct)
+>***
+>*(update state after replacing)*
+>
+>Base state: 0
+>
+>Queue: [5, n => n+1]
+>
+>Expected result: 6
+>
+>Your result: 6 (correct)
+>***
+>*(replace state after updating)*
+>
+>Base state: 0
+>
+>Queue: [5, n => n+1, 42]
+>
+>Expected result: 42
+>
+>Your result: 42 (correct)
+>***
+
+<h3 style="color:Green">Solution 2 of 2: Implement the state queue yourself</h3>
+
+```javascript
+export function getFinalState(baseState, queue) {
+  let finalState = baseState;
+
+  for (let update of queue) {
+    if (typeof update === 'function') {
+      // Apply the updater function.
+      finalState = update(finalState);
+    } else {
+      // Replace the next state.
+      finalState = update;
+    }
+  }
+
+  return finalState;
+}
+
+```
+
+*Eğer örnekleri incelemek ve konu anlatımını okumak isterseniz bu challenge sayfasını linkliyorum. 👉 [Queueing a Series of State Updates](https://react.dev/learn/queueing-a-series-of-state-updates)*
