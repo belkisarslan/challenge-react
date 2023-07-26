@@ -1313,6 +1313,8 @@ export default function Scoreboard() {
   }
 ```
 
+<img src="https://images.pexels.com/photos/7290739/pexels-photo-7290739.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Queueing a Series of State Updates" style="border-radius:8px;display:block;float:none;margin-left:auto;margin-right:auto"/>
+
 <h3 style="color:DarkOrange">Challenge 2 of 3: Find and fix the mutation</h3>
 
 💫 ***Rengini  değiştirebileceğimiz bir kutu verilmiş. Kutunun yeri de değiştirebiliyor. Kutunun arkasında sabit bir arka plan var. Kutunun yerini değiştirdikten sonra rengini değiştirirsek arka plan da hareket ediyor ancak arka planın sabit kalması istenmektedir.***
@@ -1375,3 +1377,39 @@ export default function Canvas() {
     });
   }
 ```
+
+<h3 style="color:DarkOrange">Challenge 3 of 3: Update an object with Immer</h3>
+
+💫 ***Aynı kutu örneğini Immer kütüphanesiyle çözmemiz istenmektedir.***
+
+<h3 style="color:Green">Solution 3 of 3: Update an object with Immer</h3>
+
+```javascript
+import { useImmer } from 'use-immer';
+
+const initialPosition = {
+  x: 0,
+  y: 0
+};
+
+export default function Canvas() {
+  const [shape, updateShape] = useImmer({
+    color: 'orange',
+    position: initialPosition
+  });
+
+  function handleMove(dx, dy) {
+    updateShape(draft => {
+      draft.position.x += dx;
+      draft.position.y += dy;
+    });
+  }
+
+  function handleColorChange(e) {
+    updateShape(draft => {
+      draft.color = e.target.value;
+    });
+  }
+```
+
+*Eğer örnekleri incelemek ve konu anlatımını okumak isterseniz bu challenge sayfasını linkliyorum. 👉 [Updating Objects in State](https://react.dev/learn/updating-objects-in-state)*
