@@ -1312,3 +1312,66 @@ export default function Scoreboard() {
     });
   }
 ```
+
+<h3 style="color:DarkOrange">Challenge 2 of 3: Find and fix the mutation</h3>
+
+💫 ***Rengini  değiştirebileceğimiz bir kutu verilmiş. Kutunun yeri de değiştirebiliyor. Kutunun arkasında sabit bir arka plan var. Kutunun yerini değiştirdikten sonra rengini değiştirirsek arka plan da hareket ediyor ancak arka planın sabit kalması istenmektedir.***
+
+```javascript
+const initialPosition = {
+  x: 0,
+  y: 0
+};
+
+export default function Canvas() {
+  const [shape, setShape] = useState({
+    color: 'orange',
+    position: initialPosition
+  });
+
+  function handleMove(dx, dy) {
+    //yukarıdaki örnekteki gibi setShape işlemi atlanmış
+    shape.position.x += dx;
+    shape.position.y += dy;
+  }
+
+  function handleColorChange(e) {
+    setShape({
+      ...shape,
+      color: e.target.value
+    });
+  }
+```
+
+<h3 style="color:Green">Solution 2 of 3: Find and fix the mutation</h3>
+
+```javascript
+const initialPosition = {
+  x: 0,
+  y: 0
+};
+
+
+export default function Canvas() {
+  const [shape, setShape] = useState({
+    color: 'orange',
+    position: initialPosition
+  });
+
+  function handleMove(dx, dy) {
+    setShape({
+      ...shape,
+      position: {
+        x: shape.position.x + dx,
+        y: shape.position.y + dy,
+      }
+    });
+  }
+
+  function handleColorChange(e) {
+    setShape({
+      ...shape,
+      color: e.target.value
+    });
+  }
+```
