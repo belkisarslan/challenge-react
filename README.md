@@ -16,6 +16,7 @@ Yeni react dokümanındaki challengeları çözmeye başladığım bir repo olu�
 > * [State: A Component's Memory](#state-a-components-memory)
 >* [State as a Snapshot](#state-as-a-snapshot)
 >* [Queueing a Series of State Updates](#queueing-a-series-of-state-updates)
+>* [Updating Objects in State](#updating-objects-in-state)
 > 
 
 ## Your First Component
@@ -1228,3 +1229,86 @@ export function getFinalState(baseState, queue) {
 ```
 
 *Eğer örnekleri incelemek ve konu anlatımını okumak isterseniz bu challenge sayfasını linkliyorum. 👉 [Queueing a Series of State Updates](https://react.dev/learn/queueing-a-series-of-state-updates)*
+
+## Updating Objects in State
+
+<h3 style="color:DarkOrange">Challenge 1 of 3: Fix incorrect state updates</h3>
+
+💫 ***Verilen formda hatalı ve eksik state güncellemeleri yapılmıştır. Hataları gidermemiz isteniyor.***
+
+```javascript
+export default function Scoreboard() {
+  const [player, setPlayer] = useState({
+    firstName: 'Ranjani',
+    lastName: 'Shettar',
+    score: 10,
+  });
+
+  function handlePlusClick() {
+    //useState'in ikinci parametresi olan setPlayer unutulmuş
+    player.score++;
+  }
+
+  function handleFirstNameChange(e) {
+    setPlayer({
+      ...player,
+      firstName: e.target.value,
+    });
+  }
+
+  function handleLastNameChange(e) {
+    setPlayer({
+      //kopyalama yapılmamış
+      lastName: e.target.value
+    });
+  }
+```
+>
+>Bu konuda nesne güncellemeleri ele alınmıştır. Nesneleri ve iç içe geçmiş nesneleri güncellerken kolay kopyalayabileceğimiz spread opetorden bahsedilmiştir. Örnekleri şu şekildedir.
+>```
+>setPerson({
+ > ...person, // Copy the old fields
+ > firstName: e.target.value // But override this one
+>});
+>```
+>```
+>setPerson({
+>  ...person, // Copy other fields
+>  artwork: { // but replace the artwork
+>    ...person.artwork, // with the same one
+>    city: 'New Delhi' // but in New Delhi!
+>  }
+>});
+>```
+
+<h3 style="color:Green">Solution 1 of 3: Fix incorrect state updates</h3>
+
+```javascript
+export default function Scoreboard() {
+  const [player, setPlayer] = useState({
+    firstName: 'Ranjani',
+    lastName: 'Shettar',
+    score: 10,
+  });
+
+  function handlePlusClick() {
+    setPlayer({
+      ...player,
+      score: player.score + 1,
+    });
+  }
+
+    function handleFirstNameChange(e) {
+    setPlayer({
+      ...player,
+      firstName: e.target.value,
+    });
+  }
+
+  function handleLastNameChange(e) {
+    setPlayer({
+      ...player,
+      lastName: e.target.value
+    });
+  }
+```
