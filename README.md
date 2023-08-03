@@ -17,6 +17,7 @@ Yeni react dokümanındaki challengeları çözmeye başladığım bir repo olu�
 >* [State as a Snapshot](#state-as-a-snapshot)
 >* [Queueing a Series of State Updates](#queueing-a-series-of-state-updates)
 >* [Updating Objects in State](#updating-objects-in-state)
+>* [Updating Arrays in State](#updating-arrays-in-state)
 > 
 
 ## Your First Component
@@ -1413,3 +1414,17 @@ export default function Canvas() {
 ```
 
 *Eğer örnekleri incelemek ve konu anlatımını okumak isterseniz bu challenge sayfasını linkliyorum. 👉 [Updating Objects in State](https://react.dev/learn/updating-objects-in-state)*
+
+## Updating Arrays in State
+
+Dizileri mutasyona uğratmadan kullanabilmemiz için, uygulamamız gereken yöntemler ve kaçınmamız gereken yöntemler bir tablo üzerinde gösterilmiş. Hoşuma gittiği için challenge çözümünden önce bu tabloyu aktaracağım.
+
+
+   |   | Kaçınılması Gereken   | Önerilen  |
+|--|:-------| -----:|
+| adding | push,unshift  | concat, [...arr] spread syntax    |
+| removing | pop, shift,splice  | filter, slice              |
+| replacing | splice, arr[i] = ... assignment     | map      |
+| sorting   | reverse, sort | copy the array first           |
+
+💖 *Splice ve Slice yöntemleri çok karıştırıldığı için, kullanılması gereken **p'siz olan** şeklinde akılda kalıcı bir ipucu verilmiş. Bu da çok hoşuma gitti.*
