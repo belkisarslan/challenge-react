@@ -1428,3 +1428,33 @@ Dizileri mutasyona uğratmadan kullanabilmemiz için, uygulamamız gereken yönt
 | sorting   | reverse, sort | copy the array first           |
 
 💖 *Splice ve Slice yöntemleri çok karıştırıldığı için, kullanılması gereken **p'siz olan** şeklinde akılda kalıcı bir ipucu verilmiş. Bu da çok hoşuma gitti.*
+
+<h3 style="color:DarkOrange">Challenge 1 of 4: Update an item in the shopping cart 
+</h3>
+
+- Baklava (1) +
+- Cheese (5) +
+- Spaghetti (2) +
+
+💫 ***Artı butonuna tıkladığımızda her ürünün kendi sipariş sayısının artması beklenmektedir. Bu işlemi gerçekleştirecek bir handleIncreaseClick( ) fonksiyonu yazmamız istenmektedir.***
+
+<h3 style="color:Green">Soluton 1 of 4: Update an item in the shopping cart 
+</h3>
+
+```javascript
+function handleIncreaseClick(productId) {
+  //yeni bir dizi oluşturmak için map yöntemini kullandık
+    setProducts(products.map(product => {
+      //id eşleştirmesi yaparak sadece tıkladığımızın artmasını sağladık
+      if (product.id === productId) {
+        return {
+          //spread ile nesnelerin kopyasını aldık
+          ...product,
+          count: product.count + 1
+        };
+      } else {
+        return product;
+      }
+    }))
+  }
+```
