@@ -1565,3 +1565,76 @@ function handleIncreaseClick(productId) {
     );
   }
 ```
+
+<h3 style="color:DarkOrange">Challenge 4 of 4: Fix the mutations using Immer</h3>
+
+💫 ***handleAddTodo( ), handleChangeTodo( ) ve handleDeleteTodo( ) fonksiyonlarını bir de Immer kütüphanesiyle yazmamız istenmektedir. Buradaki önemli ayrıntı ise, yukarıdaki tabloda belirtilen kaçınılması gereken ve önerilen yöntemlerin hepsini immer ile sorunsuz kullanabiliyor olmamızdır.***
+
+<h3 style="color:Green">Solution 4 of 4: Fix the mutations using Immer</h3>
+
+Version - 1 
+
+```javascript
+import { useImmer } from 'use-immer';
+
+ function handleAddTodo(title) {
+    updateTodos(draft => {
+      draft.push({
+        id: nextId++,
+        title: title,
+        done: false
+      });
+    });
+  }
+
+  function handleChangeTodo(nextTodo) {
+    updateTodos(draft => {
+      const todo = draft.find(t =>
+        t.id === nextTodo.id
+      );
+      todo.title = nextTodo.title;
+      todo.done = nextTodo.done;
+    });
+  }
+
+  function handleDeleteTodo(todoId) {
+    updateTodos(draft => {
+      const index = draft.findIndex(t =>
+        t.id === todoId
+      );
+      draft.splice(index, 1);
+    });
+  }
+```
+Version - 2
+
+```javascript
+import { useImmer } from 'use-immer';
+
+function handleAddTodo(title) {
+    updateTodos(draft => {
+      draft.push({
+        id: nextId++,
+        title: title,
+        done: false
+      });
+    });
+  }
+
+  function handleChangeTodo(nextTodo) {
+    updateTodos(todos.map(todo => {
+      if (todo.id === nextTodo.id) {
+        return nextTodo;
+      } else {
+        return todo;
+      }
+    }));
+  }
+
+   function handleDeleteTodo(todoId) {
+    updateTodos(
+      todos.filter(t => t.id !== todoId)
+    );
+  }
+
+```
