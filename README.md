@@ -1494,22 +1494,8 @@ function handleIncreaseClick(productId) {
 ```
 <h3 style="color:DarkOrange">Challenge 3 of 4: Fix the mutations using non-mutative methods</h3>
 
-💫 ***Mutasyona uğratmayan yöntemleri kullanarak handleAddTodo( ), handleChangeTodo( ) ve handleDeleteTodo( ) fonksiyonlarını yeniden yazmamız istenmektedir. Çıktı aşağıdaki gibi görünmektedir.***
+💫 ***Mutasyona uğratmayan yöntemleri kullanarak handleAddTodo( ), handleChangeTodo( ) ve handleDeleteTodo( ) fonksiyonlarını yeniden yazmamız istenmektedir.***
 
-
->
-><input placeholder="Add to do"> <button>Add</button>
->
-><input type="checkbox">
-><label>Buy milk</label> <button>Edit</button> <button>Delete</button>
->
-><input type="checkbox">
-><label>Eat tacos</label> <button>Edit</button> <button>Delete</button>
->
-><input type="checkbox">
-><label>Brew tea</label> <button>Edit</button> <button>Delete</button>
->
-<br>
 
 ```javascript
  function handleAddTodo(title) {
