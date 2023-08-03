@@ -1458,3 +1458,37 @@ function handleIncreaseClick(productId) {
     }))
   }
 ```
+
+<h3 style="color:DarkOrange">Challenge 2 of 4: Remove an item from the shopping cart</h3>
+
+- Baklava (1) + -
+- Cheese (5) + -
+- Spaghetti (2) + -
+
+💫 ***Bu defa eksi butonuna tıkladığımızda her ürünün kendi sipariş sayısının azalması beklenmektedir. Bu işlemi gerçekleştirecek bir handleDecreaseClick( ) fonksiyonu yazmamız istenmektedir. Küçük bir ayrıntı olarak siparişi 0'a düşen ürünün sepetten silinmesi istenmektedir.***
+
+<h3 style="color:Green">Solution 2 of 4: Remove an item from the shopping cart</h3>
+
+```javascript
+ function handleDecreaseClick(productId) {
+  //yeni bir dizi oluşturmak için map yöntemini kullandık
+    let nextProducts = products.map(product => {
+      //id eşleştirmesi yaparak sadece tıkladığımızın azalmasını sağladık
+      if (product.id === productId) {
+        return {
+          //spread ile nesnelerin kopyasını aldık
+          ...product,
+          // 1 azalttık
+          count: product.count - 1
+        };
+      } else {
+        return product;
+      }
+    });
+    //filter yöntemiyle sayacı 0'dan büyük olanları göster dedik
+    nextProducts = nextProducts.filter(p =>
+      p.count > 0
+    );
+    setProducts(nextProducts)
+  }
+```
