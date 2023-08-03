@@ -1492,3 +1492,76 @@ function handleIncreaseClick(productId) {
     setProducts(nextProducts)
   }
 ```
+<h3 style="color:DarkOrange">Challenge 3 of 4: Fix the mutations using non-mutative methods</h3>
+
+💫 ***Mutasyona uğratmayan yöntemleri kullanarak handleAddTodo( ), handleChangeTodo( ) ve handleDeleteTodo( ) fonksiyonlarını yeniden yazmamız istenmektedir. Çıktı aşağıdaki gibi görünmektedir.***
+
+
+>
+><input placeholder="Add to do"> <button>Add</button>
+>
+><input type="checkbox">
+><label>Buy milk</label> <button>Edit</button> <button>Delete</button>
+>
+><input type="checkbox">
+><label>Eat tacos</label> <button>Edit</button> <button>Delete</button>
+>
+><input type="checkbox">
+><label>Brew tea</label> <button>Edit</button> <button>Delete</button>
+>
+<br>
+
+```javascript
+ function handleAddTodo(title) {
+    todos.push({
+      id: nextId++,
+      title: title,
+      done: false
+    });
+  }
+
+  function handleChangeTodo(nextTodo) {
+    const todo = todos.find(t =>
+      t.id === nextTodo.id
+    );
+    todo.title = nextTodo.title;
+    todo.done = nextTodo.done;
+  }
+
+  function handleDeleteTodo(todoId) {
+    const index = todos.findIndex(t =>
+      t.id === todoId
+    );
+    todos.splice(index, 1);
+  }
+```
+<h3 style="color:Green">Solution 3 of 4: Fix the mutations using non-mutative methods</h3>
+
+```javascript
+ function handleAddTodo(title) {
+    setTodos([
+      ...todos,
+      {
+        id: nextId++,
+        title: title,
+        done: false
+      }
+    ]);
+  }
+
+  function handleChangeTodo(nextTodo) {
+    setTodos(todos.map(t => {
+      if (t.id === nextTodo.id) {
+        return nextTodo;
+      } else {
+        return t;
+      }
+    }));
+  }
+
+   function handleDeleteTodo(todoId) {
+    setTodos(
+      todos.filter(t => t.id !== todoId)
+    );
+  }
+```
