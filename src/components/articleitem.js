@@ -16,7 +16,7 @@ ArticleItem.Image = function ArticleImage({source}){
 }
 
 ArticleItem.Subtitle = function ArticleSubtitle({children}){
-return <span className='pl-1 text-gray-900 font-semibold text-sm leading-5 mt-4 block'>{children}</span>
+return <span className='pl-1 text-gray-600 font-semibold text-sm leading-5 mt-4 block'>{children}</span>
 }
 
 ArticleItem.Title = function ArticleTitle({children}){
