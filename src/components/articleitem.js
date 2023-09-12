@@ -10,7 +10,7 @@ export default function ArticleItem({children, path}) {
 }
 
 ArticleItem.Image = function ArticleImage({source}){
-    return <div className='w-full overflow-hidden rounded-md'>
+    return <div className='w-full h-full overflow-hidden rounded-md'>
       <img className='w-full h-full object-cover object-center' src={source?.src} alt={source?.alt}/>
     </div>
 }
@@ -24,5 +24,5 @@ ArticleItem.Title = function ArticleTitle({children}){
 }
 
 ArticleItem.Description = function ArticleDescription({children}){
-    return <p className='pl-1 mt-2 text-gray-500 text-base leading-6'>{children}</p>
+    return <p className='pl-1 mt-2 mb-2 text-gray-500 text-base leading-6'>{children}</p>
 }
