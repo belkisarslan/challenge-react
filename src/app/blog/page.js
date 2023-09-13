@@ -10,7 +10,7 @@ export default function Blog() {
       <Hero>
         <Hero.Subtitle>Blog</Hero.Subtitle>
         <Hero.Title>Challenge Blog</Hero.Title>
-        <Hero.Description>React.dev Challenge</Hero.Description>
+        <Hero.Description>This page contains tips from the React document.</Hero.Description>
       </Hero>
 
       <h2 className='p-3 pl-8 text-gray-500 text-2xl font-semibold leading-8'>Contents</h2>

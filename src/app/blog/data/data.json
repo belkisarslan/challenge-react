@@ -1,0 +1,40 @@
+{
+  "tips": [
+    {
+      "id": 1,
+      "content": "React components are regular JavaScript functions, but their names must start with a capital letter or they won’t work!"
+    },
+    {
+      "id": 2,
+      "content": "JSX and React are two separate things. They’re often used together, but you can use them independently of each other. JSX is a syntax extension, while React is a JavaScript library."
+    },
+    {
+      "id": 3,
+      "content": "JSX elements directly inside a map() call always need keys!"
+    },
+    {
+      "id": 4,
+      "content": "Event handlers must be passed, not called! onClick={handleClick}, not onClick={handleClick()}."
+    },
+    {
+      "id": 5,
+      "content": "Events propagate upwards. Call e.stopPropagation() on the first argument to prevent that. Events may have unwanted default browser behavior. Call e.preventDefault() to prevent that."
+    },
+    {
+      "id": 6,
+      "content": "To update some state multiple times in one event, you can use setNumber(n => n + 1) updater function."
+    },
+    {
+      "id": 7,
+      "content": "Treat all state in React as immutable.Instead of mutating an object, create a new version of it, and trigger a re-render by setting state to it."
+    },
+    {
+      "id": 8,
+      "content": "You can use the {...obj, something: 'newValue'} object spread syntax to create copies of objects. Spread syntax is shallow: it only copies one level deep."
+    },
+    {
+      "id": 9,
+      "content": "In React, you will be using slice (no p!) a lot more often because you don’t want to mutate objects or arrays in state. Splice mutates the array"
+    }
+  ]
+}
