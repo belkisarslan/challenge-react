@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import data from "../data/data.json"
+import data from "./beginnerData/data.json"
 
 export default function Beginner() {
 
