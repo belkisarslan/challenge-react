@@ -1,5 +1,6 @@
 import { AddingInteractivity } from '@/components/addingInteractivity'
 import Hero from '@/components/hero'
+import Reacting from '@/components/reacting'
 import Reducer from '@/components/reducer'
 import RenderingList from '@/components/renderingList'
 import { State } from '@/components/state'
@@ -23,6 +24,7 @@ export default function Exercise() {
 
      <RenderingList/>
      <AddingInteractivity/>
+     <Reacting/>
     </div>
   )
 }
