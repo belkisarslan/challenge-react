@@ -8,15 +8,15 @@ export default function Reacting() {
     let backgroundClassName = 'w-full flex justify-center';
     let pictureClassName = 'border-8';
     if (isActive) {
-      pictureClassName += ' border-purple-500';
+      pictureClassName += ' border-cyan-900';
     } else {
-      backgroundClassName += ' bg-purple-500';
+      backgroundClassName += ' bg-cyan-900/50';
     }
   return (
     <div>
         <h3 className='p-3 pl-8 text-center text-gray-500 text-xl font-semibold leading-8'>Reacting to Input with State</h3>
         <h4 className='p-3 pl-8 text-center text-gray-500 text-xl font-semibold leading-8'>Challenge 1 of 3: Add and remove a CSS class</h4>
-        <p className='text-center'><a target='_blank' className='p-3 pl-8 text-purple-500 text-l font-semibold leading-4' href='https://react.dev/learn/reacting-to-input-with-state'>Click for challenge page</a></p>
+        <p className='text-center'><a target='_blank' className='p-3 pl-8 text-cyan-900 text-l font-semibold leading-4' href='https://react.dev/learn/reacting-to-input-with-state'>Click for challenge page</a></p>
         <div className=' h-fit p-5 my-2 bg-gradient-to-r from-gray-800 flex flex-col items-center relative'>
         <div
       className={backgroundClassName}

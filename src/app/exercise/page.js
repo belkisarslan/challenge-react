@@ -5,10 +5,13 @@ import Reducer from '@/components/reducer'
 import RenderingList from '@/components/renderingList'
 import { State } from '@/components/state'
 import React from 'react'
+import "@/app/exercise/exercise.css"
 
 export default function Exercise() {
   return (
-    <div>
+    <>
+    <div className="progress"></div>
+    <div className="container">
       <Hero>
       <Hero.Subtitle>Exercise</Hero.Subtitle>
       <Hero.Title>Challenge React</Hero.Title>
@@ -26,5 +29,6 @@ export default function Exercise() {
      <AddingInteractivity/>
      <Reacting/>
     </div>
+    </>
   )
 }
