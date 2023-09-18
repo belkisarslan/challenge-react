@@ -6,6 +6,7 @@ import RenderingList from '@/components/renderingList'
 import { State } from '@/components/state'
 import React from 'react'
 import "@/app/exercise/exercise.css"
+import Sharing from '@/components/sharing'
 
 export default function Exercise() {
   return (
@@ -28,6 +29,7 @@ export default function Exercise() {
      <RenderingList/>
      <AddingInteractivity/>
      <Reacting/>
+     <Sharing/>
     </div>
     </>
   )
