@@ -7,6 +7,7 @@ import { State } from '@/components/state'
 import React from 'react'
 import "@/app/exercise/exercise.css"
 import Sharing from '@/components/sharing'
+import Extracting from '@/components/extracting'
 
 export default function Exercise() {
   return (
@@ -30,6 +31,7 @@ export default function Exercise() {
      <AddingInteractivity/>
      <Reacting/>
      <Sharing/>
+     <Extracting/>
     </div>
     </>
   )
